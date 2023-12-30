@@ -1,6 +1,27 @@
 .App {
-  padding: 30px 30px;
+  padding: 0px 20px;
   text-align: left;
+}
+
+.content-container {
+  display: flex;
+}
+
+.one {
+  flex: 1;
+  border-left: 0;
+}
+
+.one, .two, .three {
+  padding: 10px 10px;
+  width: 500px;
+  height: 100vh;
+  border-style: solid;
+  border-color: grey;
+}
+
+.three {
+  border-right: 0;
 }
 table {
   word-wrap: break-word;

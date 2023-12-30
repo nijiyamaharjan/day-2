@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const UseStateWithObject = () => {
+const Assignment2 = () => {
   const [arr, setArr] = useState([]);
   const [text, setText] = useState("");
 
@@ -14,12 +14,12 @@ const UseStateWithObject = () => {
     setText("");
   };
 
-  const clear = () => {
-    setArr([]);
-    setText("");
-  };
-
-  return (
+  return (<div>
+    <h1>Assignment 2</h1>
+      <p>Create a functional component that displays entered text values
+as lists</p>
+<p>When clicked on 'Add' button, the text entered in the input should be
+added to the list</p>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -27,7 +27,6 @@ const UseStateWithObject = () => {
         onChange={handleInputChange}
       />
       <button>Add</button>
-      <button onClick={clear}>Clear</button>
 
       <div>
         {arr.map((item, index) => (
@@ -39,7 +38,8 @@ const UseStateWithObject = () => {
         ))}
       </div>
     </form>
+    </div>
   );
 };
 
-export default UseStateWithObject;
+export default Assignment2;
