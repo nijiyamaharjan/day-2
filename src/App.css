@@ -9,15 +9,19 @@ table {
   
 }
 
-td {
-  border: solid 1px #666;
+span {
+  display: inline-block;
+  width: 150px;
 }
+
 .checkbox {
   width: 30px;
 }
 
 .list-item {
-  width: 200px;
+  color: blueviolet;
+  display: inline-block;
+  width: 300px;
 }
 
 .remove {
