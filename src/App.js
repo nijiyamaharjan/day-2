@@ -1,5 +1,4 @@
 import './App.css';
-import ClickCounter from './ClickCounter';
 import Assignment from './Assignment';
 
 function App() {

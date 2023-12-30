@@ -2,4 +2,25 @@
   padding: 30px 30px;
   text-align: left;
 }
+table {
+  word-wrap: break-word;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: solid 1px #666;
+}
+
+td {
+  border: solid 1px #666;
+}
+.checkbox {
+  width: 30px;
+}
+
+.list-item {
+  width: 200px;
+}
+
+.remove {
+  width: 50px;
+}
 

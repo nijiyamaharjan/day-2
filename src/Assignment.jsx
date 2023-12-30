@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const UseStateWithObject = () => {
   const [arr, setArr] = useState([]);
   const [text, setText] = useState("");
-  const [checkedIndex, setCheckedIndex] = useState(null);
+  const [checked, setChecked] = useState(false);
 
   const handleInputChange = (e) => {
     setText(e.target.value);
@@ -18,7 +18,7 @@ const UseStateWithObject = () => {
   const clear = () => {
     setArr([]);
     setText("");
-    setCheckedIndex(null);
+    setChecked(false);
   };
 
   const remove = (index) => {
@@ -26,13 +26,13 @@ const UseStateWithObject = () => {
     newArr.splice(index, 1);
     setArr(newArr);
 
-    if (index === checkedIndex) {
-      setCheckedIndex(null);
+    if (checked) {
+      setChecked(false);
     }
   };
 
-  const handleCheckboxChange = (index) => {
-    setCheckedIndex(checkedIndex === index ? null : index);
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
   };
 
   return (
@@ -44,17 +44,18 @@ const UseStateWithObject = () => {
       <div>
         {arr.map((item, index) => (
           <div key={index}>
-            <ul>
-              <li>
-                <input
+          
+    <table>
+  <tr>
+    <td className="checkbox"><input
                   type="checkbox"
-                  checked={checkedIndex === index}
-                  onChange={() => handleCheckboxChange(index)}
-                />
-                {checkedIndex === index ? <s>{item.text}</s> : item.text}
-                <button onClick={() => remove(index)}>Remove</button>
-              </li>
-            </ul>
+                  checked={checked}
+                  onChange={handleCheckboxChange}
+                /></td>
+    <td className="list-item">{checked? <s>{item.text}</s> : item.text}</td>
+    <td className="remove"><button onClick={() => remove(index)}>Remove</button></td>
+  </tr>
+</table>
           </div>
         ))}
       </div>
